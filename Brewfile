@@ -2,42 +2,43 @@
 tap "homebrew/cask-versions"
 
 # Binaries
-brew "cask"
-brew "fzf"
-brew "z"
-brew "zsh-autosuggestions"
-brew "shfmt"
-brew "tmux"
-brew "lua"
+brew "cask"   # brew install GUI apps
+brew "fzf"    # fuzzy finder (term back search history)
+brew "z"      # fuzzy quick cd
+brew "zsh-autosuggestions" # zsh intellisense
+brew "shfmt"  # sh formatter
+brew "tmux"   # terminal multiplexer
+brew "lua"    # used by neovim
 brew "neovim"
-brew "ack"
+brew "ack"    # text search files recursive in tree
 brew "node", link: :overwrite
 brew "python@3.13", link: :overwrite
-brew "pipx"
+brew "pipx"   # pip venv manager for system pkgs
 brew "ruby", link: :overwrite
-brew "ripgrep"
-brew "git"
-brew "tig"
-brew "tree"
-brew "jq"
-brew "yq"
-brew "expect"
-brew "just"
-brew "ffmpeg"
+brew "ripgrep"  # search tool like grep
+brew "git"    # repo management
+brew "tig"    # text-mode interface git
+brew "tree"   # folder tree
+brew "jq"     # json
+brew "yq"     # yaml
+brew "expect" # bash gaurd tool
+brew "just"   # makefile without the files
+brew "ffmpeg" # video/audio encoding
 brew "telnet"
+#brew 'mackup' # sync app configs
+brew "mas"    # mac app store
 
 # Development
 #brew "protobuf"
-#brew "buf"
-brew "lcov"
-brew "gcov"
+#brew "buf"       # protos breaking change linter
+brew "lcov"       # gcc graphical coverage
 # - Arduino
 brew "arduino-cli"
-cask "arduino-ide"
-cask "saleae-logic"
+cask "arduino-ide"  # req. config for arduino-cli
+cask "saleae-logic" # usb logic analyzer
 # - Nordic
-brew "doxygen"
-cask "segger-jlink"
+brew "doxygen"        # C doc gen
+cask "segger-jlink"   # JLink tool
 cask "segger-embedded-studio-for-arm"
 cask "nordic-nrf-command-line-tools"
 cask "nordic-nrf-connect"
@@ -48,14 +49,14 @@ cask "nordic-nrf-connect"
 #brew "gradle"
 #cask "android-sdk"
 #cask "android-studio"
-#brew "srccpy"
-#brew "pidcat"
+#brew "srccpy"      # screen cpy
+#brew "pidcat"      # colorised logcat
 # - iOS
-brew "aria2"
-brew "xcodes"
+brew "aria2"        # speed up xcodes downloads
+brew "xcodes"       # xcodes installer
 #brew "swift-protobuf"
 # - Flutter
-#brew "fvm"
+#brew "fvm"         # flutter versions manager
 # - Python
 #cask "pycharm-ce"
 # - Misc
@@ -76,17 +77,17 @@ vscode "vscode-arduino.vscode-arduino-community"
 vscode "vscodevim.vim"
 
 # Apps
-cask "logi-options+"
-cask "arc"
-cask "rectangle"
-cask "flycut"
-cask "ghostty"
-cask "github"
-cask "kicad"
-cask "slack"
-#cask "gimp"
-#cask "figma"
-cask "stats"
-cask "displaylink"
+cask "logi-options+"   # MX3 mouse
+cask "arc"             # private browser
+cask "rectangle"       # window snap
+cask "flycut"          # cpy/paste board manager
+cask "ghostty"         # terminal app
+cask "github"          # github desktop
+cask "kicad"           # schematics / PCB brd view
+cask "slack"           # comms
+#cask "gimp"           # graphics editing
+#cask "figma"          # UX/UI
+cask "stats"           # task bar CPU, network, etc stats
+cask "displaylink"     # non-thunderbold usb-c dock support
 #cask "sonos"
 #cask "spotify"
