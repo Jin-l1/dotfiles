@@ -4,7 +4,17 @@
 # ~/.macos — https://mths.be/macos
 
 # Editables
-HST_NAME="rocinante"
+DOTFILES_CFG=~/.config/dotfiles
+
+if [ -f $DOTFILES_CFG/.computer_name ]; then
+    CMPT_NAME=$(cat $DOTFILES_CFG/.computer_name)
+else
+    CMPT_NAME=$(sudo scutil --get ComputerName)
+    read -p "ComputerName (default to $CMPT_NAME): " CMPT_NAME
+fi
+
+mkdir -p $DOTFILES_CFG
+echo "$CMPT_NAME" > $DOTFILES_CFG/.computer_name
 
 # Close any open System Preferences panes, to prevent them from overriding
 # settings we’re about to change
@@ -22,10 +32,10 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 echo "Configuring general UI/UX..."
 
 # Set computer name (as done via System Preferences → Sharing)
-sudo scutil --set ComputerName "$HST_NAME"
-sudo scutil --set HostName "$HST_NAME"
-sudo scutil --set LocalHostName "$HST_NAME"
-sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "$HST_NAME"
+sudo scutil --set ComputerName "$CMPT_NAME"
+sudo scutil --set HostName "$CMPT_NAME"
+sudo scutil --set LocalHostName "$CMPT_NAME"
+sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "$CMPT_NAME"
 
 # Disable automatic capitalization as it’s annoying when typing code
 defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool false
