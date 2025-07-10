@@ -1,0 +1,25 @@
+*
+!.gitignore
+!.gitignore_global
+
+# bash configs
+!.bash_profile
+!.bashrc
+
+# zsh configs
+!.zprofile
+!.zshenv
+!.zshrc
+
+# prog configs
+!.config/ghostty/config
+!.fzf.bash
+!.fzf.zsh
+!.gitconfig
+!.tmux.conf
+
+# setup scripts
+!Brewfile
+!.macos
+!.gitssh
+!fresh.sh

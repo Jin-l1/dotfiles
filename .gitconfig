@@ -1,0 +1,41 @@
+[alias]
+	# === general ===
+	st = status
+	ci = commit
+	co = checkout
+	br = branch
+	addna = add . --no-all
+	# === git logging ===
+	lo = log --oneline
+	hist = log --graph --all --decorate --oneline
+	hist2 = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date short
+	# === git utils ===
+	clean-ignored = "!f() { git ls-files -z --ignored --cached --exclude-standard | xargs -0 git rm -r --cached; }; f"
+	submod-reset = "submodule update --init --recursive"
+	# === github helpers ===
+	pr = "!f() { \
+	  open \"$(git ls-remote --get-url $(git config --get branch.$(git rev-parse --abbrev-ref HEAD).remote) \
+	  | sed 's|git@github.com:\\(.*\\)$|https://github.com/\\1|' \
+	  | sed 's|\\.git$||'; \
+	  )/compare/$(\
+	  git config --get branch.$(git rev-parse --abbrev-ref HEAD).merge | cut -d '/' -f 3- \
+	  )?expand=1\"; \
+	}; f"
+[url "ssh://git@github.com/"]
+	insteadOf = https://github.com/
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[user]
+	name = Jin
+	email = jin@makesensetechnology.com
+[core]
+	editor = nvim
+[pull]
+	rebase = merges
+[push]
+	autoSetupRemote = true
+[rerere]
+	enabled = true
