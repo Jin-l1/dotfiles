@@ -1,3 +1,10 @@
+# Add directories to the PATH and prevent to add the same directory multiple times upon shell reload.
+add_to_path() {
+  if [[ -d "$1" ]] && [[ ":$PATH:" != *":$1:"* ]]; then
+    export PATH="$1:$PATH"
+  fi
+}
+
 # Language environment
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
@@ -21,7 +28,7 @@ alias py3='python3'
 alias pypath="export PYTHONPATH=$PYTHONPATH:$(pwd)"
 
 # lvim
-export PATH=$HOME/.local/bin:$PATH
+add_to_path $HOME/.local/bin
 
 # tmux
 export TMUX_PLUGIN_MANAGER_PATH="~/.config/tmux/plugins"
