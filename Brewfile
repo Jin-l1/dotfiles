@@ -63,6 +63,9 @@ cask "visual-studio-code"
 cask "zed"
 cask "google-cloud-sdk", postinstall: "${HOMEBREW_PREFIX}/bin/gcloud components update"
 cask "docker"
+brew "docker-completion"
+brew "docker-compose-completion"
+brew "docker-machine-completion"
 
 # - VSCode extensions
 vscode "github.copilot"
