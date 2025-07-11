@@ -1,5 +1,7 @@
 #!/bin/sh
 
+#set -e
+
 msu_update() {
   search=$1
   echo "checking for $search updates..."
