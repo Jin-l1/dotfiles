@@ -21,16 +21,17 @@ After backing up your old Mac you may now follow these install instructions to s
 
 1. Setup an SSH key
 ```zsh
-curl https://raw.githubusercontent.com/Jin-l1/dotfiles/HEAD/ssh.sh | sh -s "<your-email-address>"
+curl https://raw.githubusercontent.com/Jin-l1/dotfiles/HEAD/.gitssh | sh -s "<your-email-address>"
 ```
 
 2. Clone this repo to `~/.dotfiles` with:
 ```zsh
-git clone --recursive git@github.com:Jin-l1/dotfiles.git .
+git clone --recursive git@github.com:Jin-l1/dotfiles.git ~/.dotfiles
 ```
 
 3. Run the installation with:
 ```zsh
+cd ~/.dotfiles
 ./fresh.sh
 ```
 

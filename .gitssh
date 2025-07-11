@@ -1,5 +1,10 @@
 #!/bin/sh
 
+if [ -z "$1" ]; then
+  >&2 echo "missing email argument. Abort!"
+  exit 1
+fi
+
 echo "Generating a new SSH key for GitHub..."
 
 # Generating a new SSH key
