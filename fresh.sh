@@ -66,8 +66,7 @@ brew upgrade
 brew upgrade --casks
 
 # Install all our dependencies with bundle (See Brewfile)
-brew tap homebrew/bundle
-brew bundle --file ./Brewfile
+brew bundle check || brew bundle --file ./Brewfile
 
 # Tmux setup
 tmux start-server \; source-file ~/.tmux.conf
