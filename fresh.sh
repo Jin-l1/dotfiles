@@ -102,7 +102,7 @@ else
 fi
 (
   cd ~/.vim
-  source ~/.config/vimfiles_by_luan/venv/bin/activate
+  source ~/.config/vimfile_by_luan/venv/bin/activate
   sudo -s -p "Sudo password (nvim setup): "
   ./update
   sudo -k

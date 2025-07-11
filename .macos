@@ -192,6 +192,10 @@ defaults -currentHost write com.apple.iTunesHelper ignore-devices 1
 defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
 
 ###############################################################################
+# Dock items                                                                  #
+###############################################################################
+
+###############################################################################
 # Login items                                                                 #
 ###############################################################################
 echo "Configuring login items..."
