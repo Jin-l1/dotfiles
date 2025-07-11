@@ -18,20 +18,20 @@ msu_update() {
 echo "Setting up Mac..."
 
 # Link and source dotfiles
-ln -sf Brewfile ~/Brewfile
-ln -sf .bash_profile ~/.bash_profile
-ln -sf .bashrc ~/.bashrc
-ln -sf .zshenv ~/.zshenv
-ln -sf .zshrc ~/.zshrc
-ln -sf .zprofile ~/.zprofile
-ln -sf .fzf.bash ~/.fzf.bash
-ln -sf .fzf.zsh ~/.fzf.zsh
-ln -sf .gitconfig ~/.gitconfig
-ln -sf .gitignore_global ~/.gitignore_global
-ln -sf .tmux.conf ~/.tmux.conf
+ln -sf $(pwd)/Brewfile ~/Brewfile
+ln -sf $(pwd)/.bash_profile ~/.bash_profile
+ln -sf $(pwd)/.bashrc ~/.bashrc
+ln -sf $(pwd)/.zshenv ~/.zshenv
+ln -sf $(pwd)/.zshrc ~/.zshrc
+ln -sf $(pwd)/.zprofile ~/.zprofile
+ln -sf $(pwd)/.fzf.bash ~/.fzf.bash
+ln -sf $(pwd)/.fzf.zsh ~/.fzf.zsh
+ln -sf $(pwd)/.gitconfig ~/.gitconfig
+ln -sf $(pwd)/.gitignore_global ~/.gitignore_global
+ln -sf $(pwd)/.tmux.conf ~/.tmux.conf
 
 mkdir -p ~/.config/ghostty
-ln -sf .config/ghostty/config ~/.config/ghostty/config
+ln -sf $(pwd)/.config/ghostty/config ~/.config/ghostty/config
 
 # Check if Xcode Command Line Tools are installed
 if ! xcode-select -p &>/dev/null; then
