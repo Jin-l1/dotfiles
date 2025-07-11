@@ -40,7 +40,7 @@ brew "doxygen"        # C doc gen
 cask "segger-jlink"   # JLink tool
 cask "segger-embedded-studio-for-arm"
 cask "nordic-nrf-command-line-tools"
-cask "nordic-nrf-connect"
+cask "nrf-connect"
 # - Android
 #brew "openjdk@11", postinstall: "sudo ln -sfn /usr/local/opt/openjdk@11/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-11.jdk"
 #brew "openjdk@17", postinstall: "sudo ln -sfn /usr/local/opt/openjdk@17/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-17.jdk"
