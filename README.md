@@ -5,6 +5,9 @@ This repository serves as my way to help me setup and maintain my Mac. It takes 
 
 ## Getting started
 
+> [!IMPORTANT]
+> `mackup` instructions in this readme can be skipped for now. Mackup not supported in newer macOS yet!
+
 ### Backup your data
 
 If you're migrating from an existing Mac, you should first make sure to backup all of your existing data. Go through the checklist below to make sure you didn't forget anything before you migrate.
