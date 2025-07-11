@@ -17,6 +17,21 @@ msu_update() {
 
 echo "Setting up Mac..."
 
+# Link and source dotfiles
+ln -sf .bash_profile ~/.bash_profile
+ln -sf .bashrc ~/.bashrc
+ln -sf .zshenv ~/.zshenv
+ln -sf .zshrc ~/.zshrc
+ln -sf .zprofile ~/.zprofile
+ln -sf .fzf.bash ~/.fzf.bash
+ln -sf .fzf.zsh ~/.fzf.zsh
+ln -sf .gitconfig ~/.gitconfig
+ln -sf .gitignore_global ~/.gitignore_global
+ln -sf .tmux.conf ~/.tmux.conf
+
+mkdir -p ~/.config/ghostty
+ln -sf .config/ghostty/config ~/.config/ghostty/config
+
 # Check if Xcode Command Line Tools are installed
 if ! xcode-select -p &>/dev/null; then
   echo "Xcode Command Line Tools not found. Installing..."
