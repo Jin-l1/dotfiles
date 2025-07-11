@@ -86,7 +86,7 @@ fi
 
 # Neovim setup
 if [ ! -d ~/.vim ]; then
-  echo "Installing vimfiles by laun..."
+  echo "Installing vimfiles by luan..."
   mkdir -p ~/.config/vimfile_by_luan
   python3 -m venv ~/.config/vimfile_by_luan/venv
   git clone https://github.com/luan/vimfiles ~/.vim
@@ -105,9 +105,7 @@ fi
 (
   cd ~/.vim
   source ~/.config/vimfile_by_luan/venv/bin/activate
-  sudo -s -p "Sudo password (nvim setup): "
-  ./update
-  sudo -k
+  sudo ./update
 )
 
 # STM32CubeProgrammer
