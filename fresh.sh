@@ -72,14 +72,14 @@ brew bundle check || brew bundle --file ./Brewfile
 
 # Tmux setup
 tmux start-server \; source-file ~/.tmux.conf
-if [ ! -d "~/.tmux/plugins/tpm" ]; then
+if [ ! -d ~/.tmux/plugins/tpm ]; then
   echo "Installing tmux plugins..."
-  mkdir -p "~/.tmux/plugins"
-  git clone https://github.com/tmux-plugins/tpm "~/.tmux/plugins/tpm"
+  mkdir -p ~/.tmux/plugins
+  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
   export TMUX_PLUGIN_MANAGER_PATH="${HOME}/.tmux/plugins"
 else
   echo "Updating tmux plugins..."
-  (cd "~/.tmux/plugins/tpm"; git pull)
+  (cd ~/.tmux/plugins/tpm; git pull)
 fi
 ~/.tmux/plugins/tpm/scripts/install_plugins.sh # install new plugins
 ~/.tmux/plugins/tpm/bin/update_plugins all # update old plugins
@@ -90,7 +90,7 @@ if [ ! -d ~/.vim ]; then
   mkdir -p ~/.config/vimfile_by_luan
   python3 -m venv ~/.config/vimfile_by_luan/venv
   git clone https://github.com/luan/vimfiles ~/.vim
-  (cd "~/.vim"; git checkout master; git pull -r)
+  (cd ~/.vim; git checkout master; git pull -r)
   # set nvim python to venv and disable deoplete
   echo "let g:python3_host_prog = expand('~/.config/vimfile_by_luan/venv/bin/python3')" > ~/.vimrc.local.before
   echo "let g:deoplete#enable_at_startup - 0   \" disable deoplete" > ~/.vimrc.local
@@ -100,7 +100,7 @@ if [ ! -d ~/.vim ]; then
   git commit -a -m "tmp-fix: guioptions (legacy) pastetoggle bindings"
 else
   echo "Updating neovim plugins..."
-  (cd "~/.vim"; git pull -r)
+  (cd ~/.vim; git pull -r)
 fi
 (
   cd ~/.vim
