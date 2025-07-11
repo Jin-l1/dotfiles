@@ -4,7 +4,7 @@ msu_update() {
   search=$1
   echo "checking for $search updates..."
   # no-scan gets from history
-  updates=$(sofwareupdate -l --no-scan | awk -F'Label: ' '{print $2}' | awk NF)
+  updates=$(softwareupdate -l --no-scan | awk -F'Label: ' '{print $2}' | awk NF)
   if grep -q "$search" <<< "$updates"; then
     update=$(echo "$updates" | grep "$search")
     echo "update found: $update"
