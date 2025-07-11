@@ -18,6 +18,7 @@ msu_update() {
 echo "Setting up Mac..."
 
 # Link and source dotfiles
+ln -sf Brewfile ~/Brewfile
 ln -sf .bash_profile ~/.bash_profile
 ln -sf .bashrc ~/.bashrc
 ln -sf .zshenv ~/.zshenv
