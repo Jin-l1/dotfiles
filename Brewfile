@@ -1,5 +1,4 @@
 # Taps
-tap "homebrew/cask-versions"
 
 # Binaries
 brew "cask"   # brew install GUI apps
