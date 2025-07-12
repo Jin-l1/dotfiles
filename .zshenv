@@ -35,3 +35,24 @@ export TMUX_PLUGIN_MANAGER_PATH="~/.config/tmux/plugins"
 
 # rust cargo
 [ -d "$HOME/.cargo" ] && . "$HOME/.cargo/env" || true;
+
+# java
+alias java11='export JAVA_HOME=$(/usr/libexec/java_home -v11)'
+alias java17='export JAVA_HOME=$(/usr/libexec/java_home -v17)'
+java17 2>/dev/null || true
+
+# android
+if [ -d "$BREW_PREFIX/share/android-sdk" ]; then
+  export ANDROID_HOME="$BREW_PREFIX/share/android-sdk"
+  export NDK_VERSION=27.2.12479018
+  CMDLINE_TOOLS_VERSION=9.0
+  add_to_path $ANDROID_HOME/emulator
+  add_to_path $ANDROID_HOME/cmdline-tools/$CMDLINE_TOOLS_VERSION/bin
+  add_to_path $ANDROID_HOME/platform-tools
+  add_to_path $ANDROID_HOME/ndk/$NDK_VERSION
+fi
+
+# flutter / dart
+if [ -x $BREW_PREFIX/bin/fvm ]; then
+  add_to_path $HOME/.pub-cache/bin
+fi
