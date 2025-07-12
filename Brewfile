@@ -1,4 +1,5 @@
 # Taps
+tap "facebook/fb" # idb-companion
 
 # Binaries
 brew "cask"   # brew install GUI apps
@@ -53,6 +54,7 @@ cask "nrf-connect"
 # - iOS
 brew "aria2"        # speed up xcodes downloads
 brew "xcodes"       # xcodes installer
+brew "idb-companion", postinstall: "${HOMEBREW_PREFIX}/bin/pipx install fb-idb" # iOS debug bridge
 #brew "swift-protobuf"
 # - Flutter
 #brew "fvm"         # flutter versions manager
