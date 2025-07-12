@@ -38,8 +38,10 @@ cd ~/.dotfiles
 ./fresh.sh
 ```
 
-4. After mackup is synced with your cloud storage, restore preferences by running `mackup restore`
-5. Restart your computer to finalize the process
+4. Change the `[user]` entries in `.gitconfig` to your own.
+
+5. After mackup is synced with your cloud storage, restore preferences by running `mackup restore`
+6. Restart your computer to finalize the process
 
 ### Cleaning your old Mac (optionally)
 
