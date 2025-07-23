@@ -114,7 +114,11 @@ fi
 )
 
 # nrf sdk setup
-if [ ! -d ~/nordic/nrf5-sdk ]; then
+if [ ! -d /opt/nordic/ncs ]; then
+  echo "Installing Nordic nrfutil packages..."
+  nrfutil install nrf5sdk-tools # dfu / crypto tools
+  nrfutil install sdk-manager   # nrfConnect sdk manager
+
   echo "Installing Nordic nRF5 sdk..."
   mkdir -p ~/nordic/nrf5-sdk
 
