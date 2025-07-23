@@ -64,7 +64,7 @@ brew "idb-companion", postinstall: "${HOMEBREW_PREFIX}/bin/pipx install fb-idb" 
 # - Misc
 cask "visual-studio-code"
 cask "zed"
-cask "google-cloud-sdk", postinstall: "${HOMEBREW_PREFIX}/bin/gcloud components update"
+cask "gcloud-cli", postinstall: "${HOMEBREW_PREFIX}/bin/gcloud components update"
 cask "docker"
 brew "docker-completion"
 
