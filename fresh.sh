@@ -113,6 +113,18 @@ fi
   sudo ./update
 )
 
+# nrf sdk setup
+if [ ! -d ~/nordic/nrf5-sdk ]; then
+  echo "Installing Nordic nRF5 sdk..."
+  mkdir -p ~/nordic/nrf5-sdk
+
+  curl -LO https://developer.nordicsemi.com/nRF5_SDK/nRF5_SDK_v17.x.x/nRF5_SDK_17.1.0_ddde560.zip
+  unzip nRF5_SDK_17.1.0_ddde560.zip -d ~/nordic/nrf5-sdk
+  rm nRF5_SDK_17.1.0_ddde560.zip
+
+  mv ~/nordic/nrf5-sdk/nRF5_SDK_17.1.0_ddde560 ~/nordic/nrf5-sdk/nRF5_SDK_17.1.0
+fi
+
 # STM32CubeProgrammer
 #if [ -d "$STM32_PRG_PATH" ]; then
 #  sudo ln -sf $STM32_PRG_PATH/STM32_Programmer_CLI /usr/local/bin/STM32_Programmer_CLI

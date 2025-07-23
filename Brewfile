@@ -22,6 +22,7 @@ brew "tree"   # folder tree
 brew "jq"     # json
 brew "yq"     # yaml
 brew "expect" # bash gaurd tool
+brew "cmake"  # C make build system
 brew "just"   # makefile without the files
 brew "ffmpeg" # video/audio encoding
 brew "telnet"
@@ -37,6 +38,7 @@ brew "arduino-cli"
 cask "arduino-ide"  # req. config for arduino-cli
 cask "saleae-logic" # usb logic analyzer
 # - Nordic
+brew "arm-none-eabi-gcc"  # gcc arm embedded toolchain
 brew "doxygen"        # C doc gen
 cask "segger-jlink"   # JLink tool
 cask "segger-embedded-studio-for-arm"
