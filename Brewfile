@@ -40,7 +40,8 @@ cask "saleae-logic" # usb logic analyzer
 brew "doxygen"        # C doc gen
 cask "segger-jlink"   # JLink tool
 cask "segger-embedded-studio-for-arm"
-cask "nordic-nrf-command-line-tools"
+cask "nordic-nrf-command-line-tools"  # nrfjprog
+cask "nrfutil"                        # nrfutil
 cask "nrf-connect"
 # - Android
 #brew "openjdk@11", postinstall: "sudo ln -sfn /usr/local/opt/openjdk@11/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-11.jdk"
