@@ -30,6 +30,8 @@ brew "telnet"
 brew "mas"    # mac app store
 
 # Development
+#brew "openjdk@11", postinstall: "sudo ln -sfn /usr/local/opt/openjdk@11/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-11.jdk"
+brew "openjdk@17", postinstall: "sudo ln -sfn /opt/homebrew/opt/openjdk@17/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-17.jdk"
 #brew "protobuf"
 #brew "buf"       # protos breaking change linter
 brew "lcov"       # gcc graphical coverage
@@ -46,8 +48,6 @@ cask "nordic-nrf-command-line-tools"  # nrfjprog
 cask "nrfutil"                        # nrfutil
 cask "nrf-connect"
 # - Android
-#brew "openjdk@11", postinstall: "sudo ln -sfn /usr/local/opt/openjdk@11/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-11.jdk"
-#brew "openjdk@17", postinstall: "sudo ln -sfn /usr/local/opt/openjdk@17/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-17.jdk"
 #brew "maven"
 #brew "gradle"
 #cask "android-sdk"
