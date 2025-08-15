@@ -12,6 +12,7 @@ fi
 PS1="%~ %(!.#.:)) "
 
 export STM32_PRG_PATH=/Applications/STMicroelectronics/STM32Cube/STM32CubeProgrammer/STM32CubeProgrammer.app/Contents/MacOs/bin
+export STM32CubeMX_PATH=/Applications/STMicroelectronics/STM32CubeMX.app/Contents/Resources
 
 # print md5 fingerprint
 fingerprint() {
@@ -55,3 +56,4 @@ if hash adb 2>/dev/null; then
     fi
   }
 fi
+
