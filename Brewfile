@@ -38,7 +38,12 @@ brew "lcov"       # gcc graphical coverage
 # - Arduino
 brew "arduino-cli"
 cask "arduino-ide"  # req. config for arduino-cli
+# - Hardware
 cask "saleae-logic" # usb logic analyzer
+# otii
+# STMicroelectronics Cube Programmer
+# STMicroelectronics Cube Mx
+# UBlox UCenter
 # - Nordic
 brew "arm-none-eabi-gcc"  # gcc arm embedded toolchain
 brew "doxygen"        # C doc gen
