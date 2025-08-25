@@ -82,9 +82,16 @@ vscode "ms-vscode.cmake-tools"
 vscode "ms-vscode.cpptools"
 vscode "ms-vscode.cpptools-extension-pack"
 vscode "ms-vscode.cpptools-themes"
+vscode "ms-vscode.makefile-tools"
 vscode "ms-vscode.vscode-serial-monitor"
 vscode "vscode-arduino.vscode-arduino-community"
 vscode "vscodevim.vim"
+
+vscode "marus25.cortex-debug"
+vscode "mcu-debug.debug-tracker-vscode"
+vscode "mcu-debug.memory-view"
+vscode "mcu-debug.peripheral-viewer"
+vscode "mcu-debug.rtos-views"
 
 # Apps
 cask "logi-options+"   # MX3 mouse
@@ -100,4 +107,4 @@ cask "slack"           # comms
 cask "stats"           # task bar CPU, network, etc stats
 cask "displaylink"     # non-thunderbold usb-c dock support
 #cask "sonos"
-#cask "spotify"
+cask "spotify"
