@@ -46,7 +46,7 @@ cask "saleae-logic" # usb logic analyzer
 # STMicroelectronics Cube Mx
 # UBlox UCenter
 # - Nordic
-brew "arm-none-eabi-gcc"  # gcc arm embedded toolchain
+cask "gcc-arm-embedded"  # gcc arm embedded toolchain
 brew "doxygen"        # C doc gen
 cask "segger-jlink"   # JLink tool
 cask "segger-embedded-studio-for-arm"
