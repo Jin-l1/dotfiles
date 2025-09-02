@@ -35,6 +35,7 @@ brew "openjdk@17", postinstall: "sudo ln -sfn /opt/homebrew/opt/openjdk@17/libex
 #brew "protobuf"
 #brew "buf"       # protos breaking change linter
 brew "lcov"       # gcc graphical coverage
+brew "ninja"      # build system
 # - Arduino
 brew "arduino-cli"
 cask "arduino-ide"  # req. config for arduino-cli
