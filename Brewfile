@@ -44,7 +44,7 @@ cask "saleae-logic" # usb logic analyzer
 # otii
 # STMicroelectronics Cube Programmer
 # STMicroelectronics Cube Mx
-# UBlox UCenter
+# UBlox UCenter (using wine-stable & rosetta2)
 # - Nordic
 cask "gcc-arm-embedded"  # gcc arm embedded toolchain
 brew "doxygen"        # C doc gen
