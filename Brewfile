@@ -18,6 +18,7 @@ brew "ruby", link: :overwrite
 brew "ripgrep"  # search tool like grep
 brew "git"    # repo management
 brew "tig"    # text-mode interface git
+brew "git-filter-repo" # history filtering
 brew "tree"   # folder tree
 brew "jq"     # json
 brew "yq"     # yaml
@@ -47,6 +48,7 @@ cask "saleae-logic" # usb logic analyzer
 # UBlox UCenter (using wine-stable & rosetta2)
 # - Nordic
 cask "gcc-arm-embedded"  # gcc arm embedded toolchain
+# manual install v11.3.rel1 arm-toolchain (x86_64) from https://developer.arm.com/downloads/-/arm-gnu-toolchain-downloads
 brew "doxygen"        # C doc gen
 cask "segger-jlink"   # JLink tool
 cask "segger-embedded-studio-for-arm"
@@ -103,7 +105,7 @@ cask "ghostty"         # terminal app
 cask "github"          # github desktop
 cask "kicad"           # schematics / PCB brd view
 cask "slack"           # comms
-#cask "gimp"           # graphics editing
+cask "gimp"           # graphics editing
 #cask "figma"          # UX/UI
 cask "stats"           # task bar CPU, network, etc stats
 cask "displaylink"     # non-thunderbold usb-c dock support
