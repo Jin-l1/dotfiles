@@ -27,6 +27,7 @@ brew "cmake"  # C make build system
 brew "just"   # makefile without the files
 brew "ffmpeg" # video/audio encoding
 brew "telnet"
+brew "tio"    # TTY for embed devs
 #brew 'mackup' # sync app configs
 brew "mas"    # mac app store
 
