@@ -2,6 +2,9 @@ alias vi="nvim"
 alias lvi="lvim"
 alias cls="printf '\33c\e[3J'"
 
+alias kcad="open *.kicad_pro"
+alias ses="open *.emProject"
+
 # flutter
 if hash fvm 2>/dev/null; then
   alias flutter='fvm flutter'
