@@ -105,6 +105,7 @@ cask "flycut"          # cpy/paste board manager
 cask "ghostty"         # terminal app
 cask "github"          # github desktop
 cask "kicad"           # schematics / PCB brd view
+cask "freecad"         # general CAD
 cask "slack"           # comms
 cask "gimp"           # graphics editing
 #cask "figma"          # UX/UI
