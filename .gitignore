@@ -26,5 +26,6 @@
 !fresh.sh
 
 # convenient scripts
+!install_wine_dxvk.sh
 !scripts/
 !scripts/*.sh
