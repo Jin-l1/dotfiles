@@ -2,6 +2,8 @@ alias vi="nvim"
 alias lvi="lvim"
 alias cls="printf '\33c\e[3J'"
 
+alias winecut="$(pwd)/scripts/winecut.sh"
+
 alias kcad="open *.kicad_pro"
 alias ses="open *.emProject"
 

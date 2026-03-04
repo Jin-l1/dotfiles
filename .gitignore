@@ -24,3 +24,7 @@
 !.macos
 !.gitssh
 !fresh.sh
+
+# convenient scripts
+!scripts/
+!scripts/*.sh

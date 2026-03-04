@@ -47,6 +47,7 @@ cask "saleae-logic" # usb logic analyzer
 # STMicroelectronics Cube Programmer
 # STMicroelectronics Cube Mx
 # UBlox UCenter (using wine-stable & rosetta2)
+# Saturn PCB Design (using wine-stable & rosetta 2)
 # - Nordic
 cask "gcc-arm-embedded"  # gcc arm embedded toolchain
 # manual install v11.3.rel1 arm-toolchain (x86_64) from https://developer.arm.com/downloads/-/arm-gnu-toolchain-downloads
