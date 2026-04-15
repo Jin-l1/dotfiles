@@ -1,3 +1,7 @@
+# Initialize zsh completion system
+autoload -Uz compinit
+compinit
+
 alias vi="nvim"
 alias lvi="lvim"
 alias cls="printf '\33c\e[3J'"
@@ -18,6 +22,9 @@ PS1="%~ %(!.#.:)) "
 
 export STM32_PRG_PATH=/Applications/STMicroelectronics/STM32Cube/STM32CubeProgrammer/STM32CubeProgrammer.app/Contents/MacOs/bin
 export STM32CubeMX_PATH=/Applications/STMicroelectronics/STM32CubeMX.app/Contents/Resources
+
+# From nrfutil completion install
+[[ -r "${HOME}/.nrfutil/share/nrfutil-completion/scripts/zsh/setup.zsh" ]] && . "${HOME}/.nrfutil/share/nrfutil-completion/scripts/zsh/setup.zsh"
 
 # print md5 fingerprint
 fingerprint() {
