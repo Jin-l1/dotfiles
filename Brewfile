@@ -51,11 +51,12 @@ cask "saleae-logic" # usb logic analyzer
 # - Nordic
 cask "gcc-arm-embedded"  # gcc arm embedded toolchain
 # manual install v11.3.rel1 arm-toolchain (x86_64) from https://developer.arm.com/downloads/-/arm-gnu-toolchain-downloads
+cask "wireshark-app"  # network and ble analyzer
 brew "doxygen"        # C doc gen
 cask "segger-jlink"   # JLink tool
 cask "segger-embedded-studio-for-arm"
 cask "nordic-nrf-command-line-tools"  # nrfjprog
-cask "nrfutil"                        # nrfutil
+cask "nrfutil", postinstall: "nrfutil install sdk-manager nrf5sdk-tools completion ble-sniffer; nrfutil completion install zsh" # nrfutil
 cask "nrf-connect"
 # - Android
 #brew "maven"
