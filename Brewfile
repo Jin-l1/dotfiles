@@ -56,7 +56,7 @@ brew "doxygen"        # C doc gen
 cask "segger-jlink"   # JLink tool
 cask "segger-embedded-studio-for-arm"
 cask "nordic-nrf-command-line-tools"  # nrfjprog
-cask "nrfutil", postinstall: "nrfutil install sdk-manager nrf5sdk-tools completion ble-sniffer; nrfutil completion install zsh" # nrfutil
+cask "nrfutil", postinstall: "nrfutil install sdk-manager nrf5sdk-tools completion device ble-sniffer; nrfutil completion install zsh" # nrfutil
 cask "nrf-connect"
 # - Android
 #brew "maven"
