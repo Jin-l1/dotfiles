@@ -58,6 +58,8 @@ cask "segger-embedded-studio-for-arm"
 cask "nordic-nrf-command-line-tools"  # nrfjprog
 cask "nrfutil", postinstall: "nrfutil install sdk-manager nrf5sdk-tools completion device ble-sniffer; nrfutil completion install zsh" # nrfutil
 cask "nrf-connect"
+# - Raspberry Pi
+cask "raspberry-pi-imager"
 # - Android
 #brew "maven"
 #brew "gradle"
@@ -84,20 +86,32 @@ brew "docker-completion"
 # - VSCode extensions
 vscode "github.copilot"
 vscode "github.copilot-chat"
+vscode "vscodevim.vim"
+
+vscode "ms-vscode.makefile-tools"
 vscode "ms-vscode.cmake-tools"
 vscode "ms-vscode.cpptools"
 vscode "ms-vscode.cpptools-extension-pack"
+vscode "ms-vscode.cpp-devtools"
 vscode "ms-vscode.cpptools-themes"
-vscode "ms-vscode.makefile-tools"
 vscode "ms-vscode.vscode-serial-monitor"
 vscode "vscode-arduino.vscode-arduino-community"
-vscode "vscodevim.vim"
 
 vscode "marus25.cortex-debug"
 vscode "mcu-debug.debug-tracker-vscode"
 vscode "mcu-debug.memory-view"
 vscode "mcu-debug.peripheral-viewer"
 vscode "mcu-debug.rtos-views"
+
+vscode "ms-vscode-remote.remote-containers"
+vscode "ms-vscode-remote.remote-ssh"
+vscode "ms-vscode-remote.remote-ssh-edit"
+vscode "ms-vscode.remote-explorer"
+
+vscode "ms-python.debugpy"
+vscode "ms-python.python"
+vscode "ms-python.vscode-pylance"
+vscode "ms-python.vscode-python-envs"
 
 # Apps
 cask "logi-options+"   # MX3 mouse
