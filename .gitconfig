@@ -4,6 +4,7 @@
 	ci = commit
 	co = checkout
 	br = branch
+	cp = cherry-pick
 	addna = add . --no-all
 	# === git logging ===
 	lo = log --oneline
