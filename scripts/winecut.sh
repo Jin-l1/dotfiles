@@ -1,10 +1,12 @@
 #!/usr/bin/env bash
 set -e
 
+SELF=$(basename "${0%*\.sh}")
+
 if [ $# -lt 2 ]; then
-    echo "Usage: $0 <exe_path> <app_output_name>"
+    echo "Usage: ${SELF} <exe_path> <app_output_name>"
     echo "Example:"
-    echo "  $0 \"$HOME/.wine/drive_c/Program Files (x86)/Saturn PCB Design/Saturn PCB Toolkit V8.44/PCB Toolkit V8.44.exe\" \"Saturn Toolkit\""
+    echo "  ${SELF} \"$HOME/.wine/drive_c/Program Files (x86)/Saturn PCB Design/Saturn PCB Toolkit V8.44/PCB Toolkit V8.44.exe\" \"Saturn Toolkit\""
     exit 1
 fi
 

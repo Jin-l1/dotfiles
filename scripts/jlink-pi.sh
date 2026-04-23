@@ -5,26 +5,28 @@ REMOTE_HOST="${REMOTE_HOST:-admin@ms-raspberrypi.local}"
 REMOTE_PORT="${REMOTE_PORT:-19020}"
 REMOTE_CTL="jlink-rmt"
 
+SELF=$(basename "${0%*\.sh}")
+
 usage() {
   cat <<EOF
 Usage:
-  jlink-pi setup-ssh
-  jlink-pi revoke-ssh
-  jlink-pi ip
-  jlink-pi start [PORT]
-  jlink-pi stop
-  jlink-pi restart [PORT]
-  jlink-pi status
-  jlink-pi logs
+  ${SELF} setup-ssh
+  ${SELF} revoke-ssh
+  ${SELF} ip
+  ${SELF} start [PORT]
+  ${SELF} stop
+  ${SELF} restart [PORT]
+  ${SELF} status
+  ${SELF} logs
 
 Environment:
   REMOTE_HOST   SSH target (default: admin@ms-raspberrypi.local)
   REMOTE_PORT   Default J-Link Remote Server port (default: 19020)
 
 Examples:
-  jlink-pi start 19020
-  jlink-pi status
-  jlink-pi ip
+  ${SELF} start 19020
+  ${SELF} status
+  ${SELF} ip
 EOF
 }
 
