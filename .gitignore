@@ -28,4 +28,5 @@
 # convenient scripts
 !install_wine_dxvk.sh
 !scripts/
-!scripts/*.sh
+!scripts/*
+!scripts/*/*
