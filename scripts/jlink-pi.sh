@@ -12,6 +12,7 @@ usage() {
 Usage:
   ${SELF} setup-ssh
   ${SELF} revoke-ssh
+  ${SELF} setup-pi
   ${SELF} ip
   ${SELF} start [PORT]
   ${SELF} stop
@@ -31,7 +32,7 @@ EOF
 }
 
 ssh_run() {
-  ssh "${REMOTE_HOST}" "$@"
+  ssh -o ConnectTimeout=10 "${REMOTE_HOST}" "$@"
 }
 
 resolve_ip() {
@@ -40,8 +41,6 @@ resolve_ip() {
 }
 
 setup_ssh_key() {
-  local remote_host="${REMOTE_HOST}"
-
   local local_host local_user safe_host key comment ssh_config host_alias
   local_host="$(hostname -s 2>/dev/null || hostname)"
   local_user="${USER:-$(id -un)}"
@@ -51,7 +50,7 @@ setup_ssh_key() {
   key="${SSH_KEY_PATH:-$HOME/.ssh/${host_alias}_ed25519}"
   comment="${local_user}@${local_host}-jlink-pi"
 
-  echo "Setting up SSH key for ${remote_host}"
+  echo "Setting up SSH key for ${REMOTE_HOST}"
   echo "Local machine: ${local_host}"
   echo "Key file: ${key}"
 
@@ -67,10 +66,10 @@ setup_ssh_key() {
 
   if command -v ssh-copy-id >/dev/null 2>&1; then
     echo "Installing public key with ssh-copy-id..."
-    ssh-copy-id -i "${key}.pub" "${remote_host}"
+    ssh-copy-id -i "${key}.pub" "${REMOTE_HOST}"
   else
     echo "ssh-copy-id not found, using manual install..."
-    cat "${key}.pub" | ssh "${remote_host}" \
+    cat "${key}.pub" | ssh_run \
       'umask 077; mkdir -p ~/.ssh && touch ~/.ssh/authorized_keys && cat >> ~/.ssh/authorized_keys'
   fi
 
@@ -84,8 +83,8 @@ setup_ssh_key() {
     cat >> "${ssh_config}" <<EOF
 
 Host ${host_alias}
-  HostName ${remote_host#*@}
-  User ${remote_host%@*}
+  HostName ${REMOTE_HOST#*@}
+  User ${REMOTE_HOST%@*}
   IdentityFile ${key}
   AddKeysToAgent yes
   UseKeychain yes
@@ -115,8 +114,9 @@ revoke_ssh_key() {
   local host_alias="$(basename ${key%_*})"
 
   echo "Revoking SSH key for ${REMOTE_HOST}"
-  timeout 10 ssh "${REMOTE_HOST}" "sed -i.bak '/${host_alias}/d' ~/.ssh/authorized_keys"
-  [ $? -ne 0 ] && echo "Warning: Failed to remove key from remote host, it may still be authorized." >&2
+  if ! ssh_run "sed -i.bak '/${host_alias}/d' ~/.ssh/authorized_keys"; then
+    echo "Warning: Failed to remove key from remote host, it may still be authorized." >&2
+  fi
 
   echo "Removing local config and key files..."
   sed -i '' '/^Host ${host_alias}/,/^Host /d' config
@@ -130,8 +130,12 @@ setup_pi() {
   read -rsp "Pi sudo password: " password
   echo
 
-  if ! printf '%s\n' "$password" | ssh "${REMOTE_HOST}" "sudo -k -S -p '' -v"; then
-    echo "Incorrect sudo password" >&2
+  if printf '%s\n' "$password" | ssh_run "sudo -k -S -p '' -v"; then
+    echo "Sudo password verified"
+  else
+    rc=$? 
+    # ssh returns 255 on connection failure
+    [ $rc -ne 255 ] && echo "Incorrect sudo password" >&2
     exit 1
   fi
 
@@ -141,13 +145,13 @@ setup_pi() {
   {
     printf '%s\n' "$password"
     cat jlink_pi/jlink_linux_setup.sh
-  } | ssh "${REMOTE_HOST}" "sudo -k -S -p '' bash -s --"
+  } | ssh_run "sudo -k -S -p '' bash -s --"
 
   echo ">> Creating remote control script..."
   {
     printf '%s\n' "$password"
     cat jlink_pi/jlink-rmt
-  } | ssh "${REMOTE_HOST}" "sudo -k -S -p '' sh -c 'cat > ${bin_path}/jlink-rmt && chmod 755 ${bin_path}/jlink-rmt'"
+  } | ssh_run "sudo -k -S -p '' sh -c 'cat > ${bin_path}/jlink-rmt && chmod 755 ${bin_path}/jlink-rmt'"
   echo "Done"
 }
 
